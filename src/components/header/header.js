@@ -7,11 +7,15 @@ const Header = () => {
     return (
         <div className='header'>
            <Link to="/">
-                <div className='logo'>Movie app</div>
+                <div className='logo'>
+                    <div className='user-image'>
+                        <img src={logo} alt=""/>
+                    </div>
+                </div>
            </Link>
-           <div className='user-image'>
+           {/* <div className='user-image'>
                 <img src={logo}  alt=''/>
-           </div>
+           </div> */}
 
         </div>
     );
