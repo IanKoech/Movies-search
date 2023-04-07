@@ -3,6 +3,7 @@ import './MovieCard.scss';
 
 const MovieCard = (props) => {
     const {data} = props;
+    console.log("Movie data is ",data);
     return (
         <div className='card-item'>
             <div className='card-inner'>
