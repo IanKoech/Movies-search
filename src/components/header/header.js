@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import logo from '../../images/icon.png'
 import './Header.scss';
@@ -6,6 +7,10 @@ import { useDispatch } from 'react-redux';
 import { fetchAsyncMovies, fetchAsyncShows } from '../../features/movies/movieSlice';
 
 const Header = () => {
+    const navigate = useNavigate();
+    const handleContactClick = () => {
+        navigate('/contact');
+    };
     const [term, setTerm] = useState('');
     const dispatch = useDispatch();
     const submitHandler  = (e) => {
@@ -28,6 +33,7 @@ const Header = () => {
                         <img src={logo} alt=""/>
                     </div>
                 </Link>
+                </div>
                 <div className='search-bar'>
                     <form onSubmit={submitHandler}>
                         <input 
@@ -39,6 +45,8 @@ const Header = () => {
                         <button type='submit'><i className='fa fa-search'></i></button>
                     </form>
                 </div>
+                <div className='nav-links'>
+                    <button onClick={handleContactClick}>Contact Us</button>
                 </div>
                 
            {/* <div className='user-image'>

@@ -8,6 +8,7 @@ import MovieDetail from './components/MovieDetail/MovieDetail';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Contact from './components/Contact/Contact';
 
 import './App.scss';
 
@@ -20,6 +21,7 @@ function App() {
           <Routes>
               <Route  exact path='/' element={<Home/>} />
               <Route path='/movie/:imdbID' element={<MovieDetail/>} />
+              <Route path='/contact' element={<Contact/>} />
               <Route path="*" element={<ErrorPage/>} />
               
           </Routes>
