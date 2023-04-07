@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <div>Movie app</div>
-            <div>Movie search engine</div>
+            <div>Copyrigh @2023</div>
         </div>
     );
 };

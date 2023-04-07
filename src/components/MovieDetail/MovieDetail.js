@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { removeSelectedMovieOrShow } from '../../features/movies/movieSlice';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAsyncMovieOrShowDetail, getSelectedMovieOrShow } from '../../features/movies/movieSlice'; 
+import './MovieDetail.scss';
 
 const MovieDetail = () => {
     const { imdbID } = useParams();
@@ -10,6 +12,9 @@ const MovieDetail = () => {
 
     useEffect(() => {
         dispatch(fetchAsyncMovieOrShowDetail(imdbID));
+        return () => {
+            dispatch(removeSelectedMovieOrShow());
+        } 
     }, [dispatch, imdbID])
     return ( 
         <div className='movie-section'>
@@ -18,13 +23,24 @@ const MovieDetail = () => {
                     {data.Title}
                 </div>
                 <div className='movie-rating'>
-                    <span>IMDB Rating <i className='fa fa-star'>{data.imdbRating}</i></span>
-                    <br></br>
-                    <span>IMDB Votes <i className='fa fa-thumbs-up'></i> : {data.imdbVotes}</span>
-                    <br></br>
-                    <span>Runtime <i className='fa fa-film'></i> : {data.Runtime}</span>
-                    <br></br>
-                    <span>Year <i className='fa fa-calendar'></i> : {data.Year}</span>
+                    <ul>
+                        <li> <span>IMDB Rating <i className='fa fa-star'>{data.imdbRating}</i></span>
+                            <br></br>
+                        </li>
+                        <li>
+                            <span>IMDB Votes <i className='fa fa-thumbs-up'></i> : {data.imdbVotes}</span>
+                            <br></br>
+                        </li>
+                        <li>
+                            <span>Runtime <i className='fa fa-film'></i> : {data.Runtime}</span>
+                            <br></br>
+                        </li>
+                        <li>
+                             <span>Year <i className='fa fa-calendar'></i> : {data.Year}</span>
+                        </li>
+                    </ul>
+                   <p></p>
+                    <p></p>
                 </div>
                 <div className='movie-plot'>
                     {data.Plot}
