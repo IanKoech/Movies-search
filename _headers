@@ -1,0 +1,4 @@
+/api/*
+  Access-Control-Allow-Origin: http://www.omdbapi.com
+  Access-Control-Allow-Methods: GET, POST
+  Access-Control-Allow-Headers: application/json

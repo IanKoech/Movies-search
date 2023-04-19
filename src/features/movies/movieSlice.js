@@ -45,6 +45,7 @@ const movieSlice = createSlice({
         },
         [fetchAsyncMovies.rejected]: () => {
             console.log("Rejected");
+            console.log(APIKey);
         },
         [fetchAsyncShows.fulfilled]: (state, {payload}) => {
             console.log("Fetched successfully");
