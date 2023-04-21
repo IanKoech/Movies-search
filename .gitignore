@@ -23,5 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 
-#api key
-movieApiKey.js
+.env
+# Local Netlify folder
+.netlify
